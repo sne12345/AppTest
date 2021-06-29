@@ -6,31 +6,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
+    EditText userID;
+    public int id_number = 1;
+
+    public int userID(){
+        id_number++;
+        return id_number;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        Button btn_logout  = findViewById(R.id.btn_logout);
-        btn_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //로그아웃
-                mFirebaseAuth.signOut();
-
-                Intent intent = new Intent(MainActivity.this, Start.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
+        userID=findViewById(R.id.userID);
+        userID.setText("Hello User "+id_number);
 
         //탈퇴
         //mFirebaseAuth.getCurrentUser().delete();
