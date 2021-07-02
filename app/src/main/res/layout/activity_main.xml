@@ -4,21 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/userID"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="186dp"
-        android:layout_marginLeft="186dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginRight="186dp"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="208dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="4dp"
+        android:text="TOKIC 스피킹"
+        android:textColor="@color/black"
+        android:textSize="35dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_levelup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="LevelUp"
+        app:backgroundTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_height="63dp"
+            android:layout_marginTop="10dp"
+            android:gravity="start">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공통진단" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_P1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P1" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_P2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P2" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_P3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P3" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_P4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P4" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_P5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P5" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_P6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P6" />
+
+        </TableRow>
+    </TableLayout>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
