@@ -60,42 +60,57 @@
                 android:id="@+id/btn_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:showAsAction="always"
+                android:enabled="true"
+                android:checked="true"
                 android:text="공통진단" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/btn_P1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:showAsAction="always"
+                android:enabled="true"
                 android:text="P1" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/btn_P2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:showAsAction="always"
+                android:enabled="true"
                 android:text="P2" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/btn_P3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:showAsAction="always"
+                android:enabled="true"
                 android:text="P3" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/btn_P4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:showAsAction="always"
+                android:enabled="true"
                 android:text="P4" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/btn_P5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:showAsAction="always"
+                android:enabled="true"
                 android:text="P5" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/btn_P6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:showAsAction="always"
+                android:enabled="true"
                 android:text="P6" />
 
         </TableRow>

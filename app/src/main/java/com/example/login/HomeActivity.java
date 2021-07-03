@@ -19,8 +19,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        btn_test = (Button)findViewById(R.id.mock_test);
-        btn_part = (Button)findViewById(R.id.part_practice);
+        btn_test = (Button)findViewById(R.id.test_start_button);
+        btn_part = (Button)findViewById(R.id.prac_start_button);
 
         btn_test.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, MockTestActivity.class);
