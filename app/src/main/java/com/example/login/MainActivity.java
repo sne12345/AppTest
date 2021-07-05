@@ -3,27 +3,44 @@ package com.example.login;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.service.autofill.OnClickAction;
 import android.view.View;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
+
+import com.google.android.material.chip.Chip;
 
 public class MainActivity extends AppCompatActivity {
     //private FirebaseAuth mFirebaseAuth;
-    Button btn_result, btn_P1, btn_P2,btn_P3,btn_P4,btn_P5,btn_P6, btn_levelup;
+    HorizontalScrollView scroll;
+    Button btn_levelup;
+    Chip btn_result, btn_P1, btn_P2,btn_P3,btn_P4,btn_P5,btn_P6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        scroll = findViewById(R.id.ScrollView);
+        scroll.setHorizontalScrollBarEnabled(true);
 
-        btn_result = (Button)findViewById(R.id.btn_result); // = Fragment0
-        btn_P1 = (Button)findViewById(R.id.btn_P1);
-        btn_P2 = (Button)findViewById(R.id.btn_P2);
-        btn_P3 = (Button)findViewById(R.id.btn_P3);
-        btn_P4 = (Button)findViewById(R.id.btn_P4);
-        btn_P5 = (Button)findViewById(R.id.btn_P5);
-        btn_P6 = (Button)findViewById(R.id.btn_P6);
+        btn_result = (Chip)findViewById(R.id.btn_result); // = Fragment0
+        btn_P1 = (Chip)findViewById(R.id.btn_P1);
+        btn_P2 = (Chip)findViewById(R.id.btn_P2);
+        btn_P3 = (Chip)findViewById(R.id.btn_P3);
+        btn_P4 = (Chip)findViewById(R.id.btn_P4);
+        btn_P5 = (Chip)findViewById(R.id.btn_P5);
+        btn_P6 = (Chip)findViewById(R.id.btn_P6);
         btn_levelup = (Button)findViewById(R.id.btn_levelup); // = Fragment7
+
+        //진단평가 클릭 후 첫 화면 설정
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        Fragment0 fragment0 = new Fragment0();
+
+        transaction.replace(R.id.frame, fragment0);
+        transaction.commit();
 
         btn_result.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         btn_P1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
                 transaction.replace(R.id.frame, fragment1);
                 transaction.commit();
+
+
             }
         });
 
@@ -118,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
 
 }
