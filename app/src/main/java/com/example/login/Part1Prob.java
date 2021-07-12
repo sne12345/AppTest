@@ -11,7 +11,9 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.text.Html;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,8 +28,13 @@ public class Part1Prob extends AppCompatActivity {
     Intent intent;
     SpeechRecognizer mRecognizer;
 
+
+    // DB
+    private TestDBHelper mTestDBHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_part1_prob);
 
@@ -39,6 +46,9 @@ public class Part1Prob extends AppCompatActivity {
 
         textView = (TextView)findViewById(R.id.sttResult);
         sttBtn = (ImageButton) findViewById(R.id.sttStart);
+
+        // initialize DB
+        mTestDBHelper = new TestDBHelper(Part1Prob.this);
 
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
@@ -113,8 +123,12 @@ public class Part1Prob extends AppCompatActivity {
         @Override
         public void onResults(Bundle results) {
             ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+
+            mTestDBHelper.InsertAnswer(matches.toString().trim());
+
             for(int i=0; i<matches.size(); i++)
                 textView.setText(matches.get(i));
+
         }
 
         @Override
