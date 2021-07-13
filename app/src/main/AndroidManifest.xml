@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
-        <activity android:name=".P1_main"></activity>
-        <activity android:name=".Part1_Pratice" />
+        <activity
+            android:name=".P1_main">
+        </activity>
+
         <activity
             android:name=".MockTestActivity"
             android:label="@string/title_activity_mock_test"
@@ -22,7 +24,6 @@
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
