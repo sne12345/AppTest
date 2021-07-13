@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
+        <activity android:name=".P1_main"></activity>
+        <activity android:name=".Part1_Pratice" />
         <activity
             android:name=".MockTestActivity"
             android:label="@string/title_activity_mock_test"
-            android:theme="@style/Theme.Login.NoActionBar"></activity>
+            android:theme="@style/Theme.Login.NoActionBar" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_main"
@@ -25,6 +27,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
