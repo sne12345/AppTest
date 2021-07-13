@@ -14,6 +14,10 @@
         android:theme="@style/Theme.Login">
         <activity android:name=".Part1Prob"></activity>
         <activity
+            android:name=".P1_main">
+        </activity>
+
+        <activity
             android:name=".MockTestActivity"
             android:label="@string/title_activity_mock_test"
             android:theme="@style/Theme.Login.NoActionBar" />
@@ -24,11 +28,14 @@
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

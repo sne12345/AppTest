@@ -197,14 +197,16 @@
 
                     <ImageButton
                         android:id="@+id/imageButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="170dp"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
                         app:srcCompat="@drawable/rec_study_ex1" />
 
                     <ImageButton
                         android:id="@+id/imageButton2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="170dp"
+                        android:layout_height="200dp"
+                        android:scaleType="fitXY"
                         app:srcCompat="@drawable/rec_study_ex2" />
 
                     <ImageButton
