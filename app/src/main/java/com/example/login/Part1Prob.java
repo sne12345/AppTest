@@ -5,8 +5,10 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Part1Prob extends AppCompatActivity {
 
@@ -27,6 +30,13 @@ public class Part1Prob extends AppCompatActivity {
     ImageButton sttBtn;
     Intent intent;
     SpeechRecognizer mRecognizer;
+
+    // countdown
+    TextView textViewCountDown;
+    private static final long COUNTDOWN_IN_MILLIS = 10000;
+    private ColorStateList textColorDefaultCd;
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMillis;
 
 
     // DB
@@ -46,6 +56,13 @@ public class Part1Prob extends AppCompatActivity {
 
         textView = (TextView)findViewById(R.id.sttResult);
         sttBtn = (ImageButton) findViewById(R.id.sttStart);
+
+        // for Countdown
+        textViewCountDown = findViewById(R.id.tv_countdown);
+        textColorDefaultCd = textViewCountDown.getTextColors();
+
+        timeLeftInMillis = COUNTDOWN_IN_MILLIS;
+        startCountDown();
 
         // initialize DB
         mTestDBHelper = new TestDBHelper(Part1Prob.this);
@@ -138,4 +155,30 @@ public class Part1Prob extends AppCompatActivity {
         public void onEvent(int i, Bundle bundle) { }
     };
 
+
+    private void startCountDown(){
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                timeLeftInMillis = 0;
+                updateCountDownText();
+                finish();
+            }
+        }.start();
+    }
+
+    private void updateCountDownText(){
+        int minutes = (int) (timeLeftInMillis / 1000) / 60;
+        int seconds = (int) (timeLeftInMillis / 1000) % 60;
+
+        String timeFormatted = String.format(Locale.getDefault(),"%02d:%02d", minutes,seconds);
+
+        textViewCountDown.setText(timeFormatted);
+    }
 }
