@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btn_color_mint">#AFDBC5</color>
     <color name="text_color_wh">#EBEAEC</color>
+    <color name="submit_box">#6B97A3</color>
 
 "
 </resources>
