@@ -21,8 +21,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="234dp"
                 android:scaleType="fitCenter"
-                tools:layout_editor_absoluteY="1062dp"
-                android:src="@drawable/part_image" />
+                android:src="@drawable/part_image"
+                tools:layout_editor_absoluteY="1062dp" />
 
             <TextView
                 android:id="@+id/textView_P1"
@@ -81,20 +81,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="40dp"
+
+                    android:clickable="true"
+                    android:enabled="true"
                     android:fontFamily="@font/roboto_bold"
                     android:text="학습선택"
-                    app:backgroundTint="#FFFFFF"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    app:backgroundTint="#FFFFFF" />
 
                 <Button
                     android:id="@+id/btn_goto_intro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
+                    android:clickable="true"
+                    android:enabled="true"
                     android:fontFamily="@font/roboto_bold"
                     android:text="공부방법"
-                    app:backgroundTint="#FFFFFF"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    app:backgroundTint="#FFFFFF" />
 
             </LinearLayout>
 
