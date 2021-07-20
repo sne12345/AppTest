@@ -40,6 +40,7 @@ public class P1_module extends Fragment {
             @Override
             public void onClick(View v) {
                 btn_P1_mod1.setBackgroundResource(R.drawable.play_button2);
+
                 Intent intent = new Intent(getActivity(), P1_mod_1.class);
                 startActivity(intent);
 
