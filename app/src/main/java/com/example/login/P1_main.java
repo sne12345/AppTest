@@ -3,6 +3,7 @@ package com.example.login;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ public class P1_main extends AppCompatActivity {
         btn_module.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_module.setBackgroundColor(Color.GRAY);
+                btn_intro.setBackgroundColor(Color.WHITE);
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 P1_module p1_module = new P1_module();
 
@@ -38,6 +41,8 @@ public class P1_main extends AppCompatActivity {
         btn_intro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_intro.setBackgroundColor(Color.GRAY);
+                btn_module.setBackgroundColor(Color.WHITE);
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 P1_intro p1_introduction = new P1_intro();
 
