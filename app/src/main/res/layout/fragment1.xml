@@ -9,10 +9,10 @@
 
     <LinearLayout
         android:layout_width="194dp"
-        android:layout_height="555dp"
-        android:orientation="vertical"
-        android:layout_gravity="left"
-        android:layout_marginTop="140dp">
+    android:layout_height="555dp"
+    android:orientation="vertical"
+    android:layout_gravity="left"
+    android:layout_marginTop="100dp">
 
         <ImageButton
             android:id="@+id/btn_Enter_P1"
@@ -45,7 +45,7 @@
         android:layout_height="817dp"
         android:orientation="vertical"
         android:layout_gravity="right"
-        android:layout_marginTop="140dp">
+        android:layout_marginTop="100dp">
 
         <ImageView
             android:id="@+id/imageView2"
