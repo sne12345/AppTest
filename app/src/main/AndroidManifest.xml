@@ -17,6 +17,7 @@
         <activity android:name=".P1_mod_1" />
         <activity android:name=".Part1Prob" />
         <activity android:name=".P1_main" />
+        <activity android:name=".MockTestBase"/>
         <activity
             android:name=".MockTestActivity"
             android:label="@string/title_activity_mock_test"
